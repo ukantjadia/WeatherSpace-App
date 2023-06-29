@@ -38,43 +38,52 @@ class _testContainerState extends State<testContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 149,
-      color: Colors.black45,
-      child: ClipPath(
-        clipper:  WaveClipper(),
-        // ShapeBorderClipper(
-        //   shape: CircleBorder(
-        //     side: BorderSide(color: Colors.red, width: 4),
-        //   ),
-        // ),
-        child: Container(
-          color: Colors.red,
-          height: 150,
-        ),
+      height: 106,
+      child: Stack(
+        children: [
+          RotatedBox(
+            quarterTurns: 3,
+            child: ClipPath(
+             clipper:  WaveClipper(),
+             child: Container(
+               color: Colors.red,
+             ),
+                ),
+          ),
+          Container(
+            child: ClipPath(
+              clipper:  WaveClipper(),
+              child: Container(
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+// class ReverseWaveClipper extends CustomClipper<Path> {
+//   @override
+//   Path getClip(Size size) {
+//     Path path = Path();
+//     path.lineTo(size.width,size.height);// bottom last = c
+//     path.lineTo( size.height,size.width);  // top 1st = a
+//     return path;
+//   }
+//   @override
+//   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
+// }
 
 class WaveClipper extends CustomClipper<Path> {
-
   @override
   Path getClip(Size size) {
     Path path = Path();
     double midwidth = size.width;
-    // double midheight = size.height;
     path.lineTo(0, size.height);  // top 1st = a
     path.lineTo(size.width,size.height);// bottom last = c
-    
-
-    path.lineTo(size.width,0);
-path.quadraticBezierTo(0, size.height/2, 0, 0);
-    // path.lineTo(0,size.height);
-    // path.lineTo(size.height,size.width);
-
     return path;
   }
-
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
