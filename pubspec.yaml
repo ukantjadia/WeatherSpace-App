@@ -37,6 +37,7 @@ dependencies:
   cached_network_image: ^3.2.3
   flutter_svg: ^2.0.5
   animated_svg: ^2.0.0
+  proste_bezier_curve: ^2.0.2
 
 dev_dependencies:
   flutter_test:
