@@ -11,7 +11,12 @@ class homePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: navBar()
+      bottomNavigationBar: testContainer(),
+      body: Column( 
+        children: [
+          Text("data")
+        ],
+      )
 
       
     );
