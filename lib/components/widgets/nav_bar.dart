@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../../consts/urls_assets/url_assets.dart';
 // import 'package:flutter_svg/svg.dart';
@@ -15,13 +16,12 @@ class testContainer extends StatefulWidget {
 }
 
 class _testContainerState extends State<testContainer> {
-/// netwrok url 
-
+  /// netwrok url
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 110,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -78,16 +78,13 @@ class _testContainerState extends State<testContainer> {
           ),
 
           /// adding icon
-          Image.network(
-            nav_arc
-          ),
-        
+          Image.network(nav_arc),
+
           Padding(
-            padding:  const EdgeInsetsDirectional.only(end: 14),
+            padding: const EdgeInsetsDirectional.only(end: 14),
             child: Container(
-              decoration:  const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(nav_bottom)),
+              decoration: const BoxDecoration(
+                image: DecorationImage(image: AssetImage(nav_bottom)),
                 //         boxShadow: [
                 //   BoxShadow(
                 //     color: Colors.grey.shade600,
@@ -100,12 +97,19 @@ class _testContainerState extends State<testContainer> {
             ),
           ),
 
-
-          // SvgPicture.network(nav_marker_svg),
-          // SvgPicture.network(nav_menu_svg)
-        
-        
-        
+          Container(
+            // color: Colors.red,
+            alignment: Alignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(nav_marker_assets),
+                WidthBox(175),
+                Image.asset(nav_menu_assets)
+              ],
+            ),
+          ).pOnly(top:36),
         ],
       ),
     );
