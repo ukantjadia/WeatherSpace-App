@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'package:weather_space/consts/urls_assets/url_assets.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,23 +9,60 @@ class homePage extends StatelessWidget {
   // homePage({super.key});
 
   // helpers helper  =  ;
-
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          // bottomNavigationBar: testContainer(),
-          body: Stack(
-        children: [
-          Image.network(
-            home_bg,width: double.infinity,fit: BoxFit. fill,
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
+    return Scaffold(
+        // bottomNavigationBar: testContainer(),
+        body: Container(
+      height: height,
+      width: width,
+      child: Stack(children: [
+        Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            Image.network(
+              home_bg,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
+            Image.network(
+              snowman_net,
+              width: double.infinity,
+              fit: BoxFit.contain,
+            ).pOnly(bottom: 66),
+            testContainer()
+          ],
+        ),
+        // Text("sdfsdfsfsdfsdsdfasd"),
+        RichText(
+          text: const TextSpan(
+            text: "Montreal\n",
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 39,
+            ),
+            children: [
+              TextSpan(
+                text: "36.C\n",
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 63,
+                ),
+              ),
+              TextSpan(
+                text: "Mostly Clear\n",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 26,
+                ),
+              ),
+            ],
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [testContainer()],
-          ),
-        ],
-      )),
-    );
+        ).pOnly(top:80,left:16),
+      ]),
+    ));
   }
 }
