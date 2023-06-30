@@ -13,6 +13,7 @@ class homePage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: testContainer(),
       body: Column( 
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text("data")
         ],
