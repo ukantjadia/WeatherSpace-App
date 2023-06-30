@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+
+import '../../consts/urls_assets/url_assets.dart';
 // import 'package:flutter_svg/svg.dart';
 
 class testContainer extends StatefulWidget {
@@ -12,6 +15,9 @@ class testContainer extends StatefulWidget {
 }
 
 class _testContainerState extends State<testContainer> {
+/// netwrok url 
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,8 +39,11 @@ class _testContainerState extends State<testContainer> {
                       decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Color.fromRGBO(117, 130, 244, 0.5),
-                            Color(0xFF7582F4)
+                            Color(0xFF25244C),
+
+                            // Color(0xFF38386A),
+                            Color(0xFF25244C),
+                            // Color(0xFF7582F4),
                           ],
                         ),
                       ),
@@ -42,16 +51,21 @@ class _testContainerState extends State<testContainer> {
                     ),
                   ),
                 ),
+
                 /// first traingle not rotated
                 Container(
                   child: ClipPath(
                     clipper: WaveClipper(),
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
+                        // color: Color(0xFF7582F4),
                         gradient: LinearGradient(
                           colors: [
-                            Color.fromRGBO(117, 130, 244, 0.5),
-                            Color.fromARGB(37, 36, 76, 0),
+                            Color(0xFF25244C),
+
+                            // Color(0xFF38386A),
+                            Color(0xFF25244C),
+                            // Color(0xFF7582F4),
                           ],
                         ),
                       ),
@@ -62,12 +76,36 @@ class _testContainerState extends State<testContainer> {
               ],
             ),
           ),
+
           /// adding icon
           Image.network(
-            "https://ukantjadia.me/wspace/nav_arc.png",
+            nav_arc
           ),
-          SvgPicture.network("https://ukantjadia.me/wspace/nav_button.svg",
+        
+          Padding(
+            padding:  const EdgeInsetsDirectional.only(end: 14),
+            child: Container(
+              decoration:  const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(nav_bottom)),
+                //         boxShadow: [
+                //   BoxShadow(
+                //     color: Colors.grey.shade600,
+                //     spreadRadius: 0.1,
+                //     blurRadius: 1,
+                //     offset: Offset(1, 1)
+                //   )
+                // ]
               ),
+            ),
+          ),
+
+
+          // SvgPicture.network(nav_marker_svg),
+          // SvgPicture.network(nav_menu_svg)
+        
+        
+        
         ],
       ),
     );
@@ -89,4 +127,4 @@ class WaveClipper extends CustomClipper<Path> {
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
 
-void imgCaller() {}
+// void imgCaller() {}
