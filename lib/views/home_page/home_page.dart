@@ -7,9 +7,6 @@ import '../../components/widgets/nav_bar.dart';
 import '../../consts/regular.dart';
 
 class homePage extends StatelessWidget {
-  // homePage({super.key});
-
-  // helpers helper  =  ;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -37,7 +34,6 @@ class homePage extends StatelessWidget {
             testContainer()
           ],
         ),
-        // Text("sdfsdfsfsdfsdsdfasd"),
         RichText(
           text: const TextSpan(
             text: "Montreal\n",
