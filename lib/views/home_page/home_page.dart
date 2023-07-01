@@ -23,13 +23,13 @@ class homePage extends StatelessWidget {
         Stack(
           alignment: Alignment.bottomCenter,
           children: [
-            Image.network(
-              home_bg,
+            Image.asset(
+              home_bg_png,
               width: double.infinity,
               fit: BoxFit.fill,
             ),
-            Image.network(
-              snowman_net,
+            Image.asset(
+              snowman_png,
               width: double.infinity,
               fit: BoxFit.contain,
             ).pOnly(bottom: 66),

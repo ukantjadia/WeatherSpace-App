@@ -79,25 +79,23 @@ class _testContainerState extends State<testContainer> {
           ),
 
           /// adding icon
-          Image.network(nav_arc),
+          // Image.network(nav_arc),
 
-          Padding(
-            padding: const EdgeInsetsDirectional.only(end: 14),
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(image: AssetImage(nav_bottom)),
-                //         boxShadow: [
-                //   BoxShadow(
-                //     color: Colors.grey.shade600,
-                //     spreadRadius: 0.1,
-                //     blurRadius: 1,
-                //     offset: Offset(1, 1)
-                //   )
-                // ]
-              ),
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(image: AssetImage(nav_arc_png)),
+              //         boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey.shade600,
+              //     spreadRadius: 0.1,
+              //     blurRadius: 1,
+              //     offset: Offset(1, 1)
+              //   )ss
+              // ]
             ),
+            
           ),
-
+          Image.asset(nav_button_png).pOnly(right: 8),
           Container(
             // color: Colors.red,
             alignment: Alignment.center,
@@ -105,9 +103,9 @@ class _testContainerState extends State<testContainer> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(nav_marker_assets),
+                Image.asset(nav_marker_png),
                 WidthBox(175),
-                Image.asset(nav_menu_assets)
+                Image.asset(nav_menu_png)
               ],
             ),
           ).pOnly(top:36),
