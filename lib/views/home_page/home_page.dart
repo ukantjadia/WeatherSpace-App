@@ -4,6 +4,7 @@ import 'package:weather_space/consts/urls_assets/url_assets.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../components/widgets/nav_bar.dart';
+import '../../consts/regular.dart';
 
 class homePage extends StatelessWidget {
   // homePage({super.key});
@@ -61,7 +62,7 @@ class homePage extends StatelessWidget {
               ),
             ],
           ),
-        ).pOnly(top:80,left:16),
+        ).pOnly(top:context.percentHeight*10,left:context.percentWidth * 10),
       ]),
     ));
   }
