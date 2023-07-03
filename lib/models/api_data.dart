@@ -45,8 +45,8 @@ class ApiDataWind {
 // */
 
 
-//   ApiDataWind({
-//   });
+  // ApiDataWind({
+  // });
   ApiDataWind.fromJson(Map<String, dynamic> json) {
   }
   Map<String, dynamic> toJson() {

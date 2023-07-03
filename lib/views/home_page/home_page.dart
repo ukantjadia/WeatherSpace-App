@@ -88,10 +88,11 @@ class _homePageState extends State<homePage> {
             //     }
             //   },
             // ),
-            Text("${apiFromData?.weather?[0]?.description}",style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 39,
-                        color: Colors.red)),
+            // Text("${apiFromData?.wind[0]?}",
+                 // style: TextStyle(
+                 //     fontWeight: FontWeight.w400,
+                 //     fontSize: 39,
+                 //     color: Colors.red)),
             RichText(
               text: const TextSpan(
                 text: "api",
