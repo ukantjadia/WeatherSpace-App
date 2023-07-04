@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:weather_space/consts/urls_assets/url_assets.dart';
 import 'package:weather_space/models/api_data.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
+import 'package:weather_space/consts/urls_assets/url_assets.dart';
+
 import '../../components/widgets/nav_bar.dart';
 import '../../services/api_provider/api_provider.dart';
 
@@ -25,6 +27,7 @@ class _homePageState extends State<homePage> {
     // debugPrint("sfsfs        ${openweaterAPI.runtimeType}");
   }
 
+
 // Print(openWeatherAPI);
   @override
   Widget build(BuildContext context) {
@@ -45,54 +48,23 @@ class _homePageState extends State<homePage> {
               alignment: Alignment.bottomCenter,
               children: [
                 Image.asset(
-                  home_bg_png,
+                  home_bg_png1,
+                  // home_bg_png,
+                  // 'assets/images/mountain.png',
                   width: double.infinity,
                   fit: BoxFit.fill,
                 ),
                 Image.asset(
-                  snowman_png,
+                  // snowman_png
+                  house_png,
+                  // 'assets/images/House.png',
                   width: double.infinity,
-                  fit: BoxFit.contain,
-                ).pOnly(bottom: 66),
+                  fit: BoxFit.fill,
+                ),
+                // .pOnly(bottom: context.percentHeight * 80),
                 testContainer()
               ],
             ),
-            // FutureBuilder(builder: (context,snapshot){
-            //   return
-            // }),
-            // caller,
-            // Text("${ApiData().timezone.toInt()?}",style: TextStyle(
-            //       fontWeight: FontWeight.w400,
-            //       fontSize: 39,color: Colors.red
-            //     )).pOnly(top: context.percentHeight * 30,
-            //     left: context.percentWidth * 30),
-            // FutureBuilder(
-            //   future: openweaterAPI,
-            //   builder: (context, snapshot) {
-            //     if (snapshot.hasData) {
-            //       return Text(
-            //         snapshot.data!.name!.toString(),
-            //         style: TextStyle(
-            //             fontWeight: FontWeight.w400,
-            //             fontSize: 39,
-            //             color: Colors.red),
-            //       );
-            //     } else if (snapshot.hasError) {
-            //       return Text("slfjafljasldf ${snapshot.error}");
-            //     } else {
-            //       return Scaffold(
-            //         body: Center(
-            //           child: CircularProgressIndicator(),
-            //         ),
-            //       );
-            //     }
-            //   },
-            // ),
-            // Text("${apiFromData?.wind[0]?}",
-                 // style: TextStyle(
-                 //     fontWeight: FontWeight.w400,
-                 //     fontSize: 39,
-                 //     color: Colors.red)),
             RichText(
               text: const TextSpan(
                 text: "api",
