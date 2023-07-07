@@ -58,6 +58,7 @@ class _testContainerState extends State<testContainer> {
                   child: ClipPath(
                     clipper: WaveClipper(),
                     child: Container(
+                      
                       decoration: BoxDecoration(
                         // color: Color(0xFF7582F4),
                         gradient: LinearGradient(
