@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:weather_space/models/api_data.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
@@ -13,8 +12,8 @@ class homePage extends StatefulWidget {
   State<homePage> createState() => _homePageState();
 }
 
-late Future<ApiData> openweaterAPI;
-late List<dynamic> api_data = [];
+// late Future<ApiData> openweaterAPI;
+// late List<dynamic> api_data = [];
 
 class _homePageState extends State<homePage> {
   @override
@@ -26,7 +25,6 @@ class _homePageState extends State<homePage> {
     getDataopenWeatherApi();
     // debugPrint("sfsfs        ${openweaterAPI.runtimeType}");
   }
-
 
 // Print(openWeatherAPI);
   @override
@@ -65,6 +63,11 @@ class _homePageState extends State<homePage> {
                 testContainer()
               ],
             ),
+            Text("${apiFromData?.weather?[0]?.description}",
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 39,
+                    color: Colors.red)),
             RichText(
               text: const TextSpan(
                 text: "api",
